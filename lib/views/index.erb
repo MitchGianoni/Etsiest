@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Etsiest</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<ul class="search-results">
+			<% items.each do |item| %>
+				<li class="etsy-item"> <%= item %></li>
+			<% end %>
+		</ul>
+	</body>
+</html>
