@@ -7,9 +7,11 @@
 	<body>
 		<ul class="search-results">
 			<% items.each do |item| %>
+
+			<% binding.pry %>
 				
-				<li class="title"> <%= item["title"] %> </li>
-			<!-- 	<li class="etsy-item"> <%= item %></li> -->
+			<!-- 	<li class="title"> <%= item["title"] %> </li> -->
+			<<li class="etsy-item"> <%= item %></li> 
 			<% end %>
 		</ul>
 	</body>
