@@ -5,14 +5,25 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+	<div class ="card">
 		<ul class="search-results">
 			<% items.each do |item| %>
-
-			<% binding.pry %>
-				
+	
+			<div class="image">
+				<li> <img src="<%= item["Images"][0]["url_fullxfull"] %>"> </li>
+			</div>
+			<div class="title">
+				<li> <%= item["title"] %></li>
+			</div>
+			<div class="seller">
+			</div>
+			<div class="price">
+			</div>
 			<!-- 	<li class="title"> <%= item["title"] %> </li> -->
-			<<li class="etsy-item"> <%= item %></li> 
+			<!-- <<li class="etsy-item"> <%= item %></li> -->
+
 			<% end %>
 		</ul>
+	</div>
 	</body>
 </html>
