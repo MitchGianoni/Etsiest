@@ -1,5 +1,4 @@
 
-<!-- Etsy image, search bar, side column, images -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,10 +13,20 @@
 			<input type="text"><input class="button" type="submit" value="Search">
 		</form>
 		<hr>	
+			<a class="hy"><ul><li>
+					<a href="https://www.etsy.com/search/clothing" class="words">Clothing</a>
+					<a href="https://www.etsy.com/search/accessories" class="words">Accessories</a>
+					<a href="https://www.etsy.com/search/jewelry" class="words">Jewelry</a>
+					<a href="https://www.etsy.com/search/craft-supplies-and-tools" class="words">Craft Supplies & Tools</a>
+					<a href="https://www.etsy.com/search/weddings" class="words">Weddings</a>
+					<a href="https://www.etsy.com/search/home-and-living" class="words">Home & Living</a>x		
+				</li></ul></a>
+		<hr> 
+
 		<div class="sidebar">
 			Show Results For:
 			<div class="sidemenu">
-				<ul>
+				<li>
 					<a href="https://www.etsy.com/search?">All categories</a>
 					<a href="https://www.etsy.com/search/art-and-collectibles" class="words"><li>Art & Collectibles</li></a>
 					<a href="https://www.etsy.com/search/home-and-living" class="words"><li>Home & Living</li></a>
@@ -32,14 +41,13 @@
 					<a href="https://www.etsy.com/search/bath-and-beauty" class="words"><li>Bath & Beauty</li></a>
 					<a href="https://www.etsy.com/search/toys-and-games" class="words"><li>Toys & Games</li></a>
 					<a href="https://www.etsy.com/search/weddings" class="words"><li>Weddings</li></a>
-				</ul>
+				</li>
 			</div>
 		</div>
 
 		<div class ="card">
 			<ul class="searchresults">
 				<% items.each do |item| %>
-
 					<div class="image">
 						<li> 
 							<a title="<%=item["title"] %> <%= item["tags"] %>" class="tooltip" href="<%= item["url"] %>">
