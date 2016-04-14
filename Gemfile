@@ -5,6 +5,7 @@ gemspec
 
 gem "etsy"
 gem "sinatra"
+gem "kaminari"
 
 group :development do
 	gem "pry"

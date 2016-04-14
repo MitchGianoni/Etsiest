@@ -1,3 +1,5 @@
+
+<!-- Etsy image, search bar, side column, images -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -5,25 +7,55 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-	<div class ="card">
-		<ul class="search-results">
-			<% items.each do |item| %>
-	
-			<div class="image">
-				<li> <img src="<%= item["Images"][0]["url_fullxfull"] %>"> </li>
-			</div>
-			<div class="title">
-				<li> <%= item["title"] %></li>
-			</div>
-			<div class="seller">
-			</div>
-			<div class="price">
-			</div>
-			<!-- 	<li class="title"> <%= item["title"] %> </li> -->
-			<!-- <<li class="etsy-item"> <%= item %></li> -->
 
+	<div class="heads">
+		<img class="etsy" src="http://static1.squarespace.com/static/507a8052e4b066c1cdd683b7/507a8052e4b066c1cdd683bb/53110c1ce4b019c52e30a054/1393654027133/Etsy-logo.png?format=1000w">
+		<form method="get" class="bar">
+			<input type="text"><input class="button" type="submit" value="Search">
+		</form>
+		<hr>	
+		<div class="sidebar">
+			Show Results For:
+			<div class="sidemenu">
+				<ul>
+					<a href="https://www.etsy.com/search?">All categories</a>
+					<a href="https://www.etsy.com/search/art-and-collectibles" class="words"><li>Art & Collectibles</li></a>
+					<a href="https://www.etsy.com/search/home-and-living" class="words"><li>Home & Living</li></a>
+					<a href="https://www.etsy.com/search/clothing" class="words"><li>Clothing</li></a>
+					<a href="https://www.etsy.com/search/paper-and-party-supplies" class="words"><li>Paper & Party Supplies</li></a>
+					<a href="https://www.etsy.com/search/accessories" class="words"><li>Accessories</li></a>
+					<a href="https://www.etsy.com/search/jewelry" class="words"><li>Jewelry</li></a>
+					<a href="https://www.etsy.com/search/craft-supplies-and-tools" class="words"><li>Craft Supplies & Tools</li></a>
+					<a href="https://www.etsy.com/search/bags-and-purses" class="words"><li>Bags & Purses</li></a>
+					<a href="https://www.etsy.com/search/electronics-and-accessories" class="words"><li>Electronics & Accessories</li></a>
+					<a href="https://www.etsy.com/search/books-movies-and-music" class="words"><li>Books, Movies & Music</li></a>
+					<a href="https://www.etsy.com/search/bath-and-beauty" class="words"><li>Bath & Beauty</li></a>
+					<a href="https://www.etsy.com/search/toys-and-games" class="words"><li>Toys & Games</li></a>
+					<a href="https://www.etsy.com/search/weddings" class="words"><li>Weddings</li></a>
+				</ul>
+			</div>
+		</div>
+
+		<div class ="card">
+			<ul class="searchresults">
+				<% items.each do |item| %>
+
+					<div class="image">
+						<li> 
+							<a title="<%=item["title"] %> <%= item["tags"] %>" class="tooltip" href="<%= item["url"] %>">
+							<img class="this" src="<%= item["Images"][0]["url_170x135"] %>"> 
+						</li>
+						<li class="listing">
+							<a href="<%= item["url"] %>"><%= item["title"] %></a>
+						</li>
+						<li class="seller">
+							<a href="<%= item["Shop"]["url"]%>" class="shoppy"><%= item["Shop"]["shop_name"] %></a>
+							<span class="price"><%= item["price"] %><%= item["currency_code"] %></span>
+						</li>
+					</div>
 			<% end %>
 		</ul>
 	</div>
+</div>
 	</body>
 </html>

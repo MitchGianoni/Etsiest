@@ -19,7 +19,7 @@ module Etsiest
 		# To be able to get the *data* we want and loop over it
 		# in the ERB template, I need to pull the data out of the
 		# Etsy::Request instance. This "result" method works best.
-		erb :index, locals: { items: response.result }
+		erb :index, locals: { items: response.result, query: query }
 	end
 
 	run! if app_file == $0
